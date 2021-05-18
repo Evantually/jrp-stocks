@@ -1,0 +1,6 @@
+Set share price to the price of the previous sale
+Create user roles so only authorized traders can execute trades
+Create equity and market cap values for each company
+Use equity/market cap to determine price/earnings
+Modify market cap by outstanding shares * price/share
+Create market orders queue for both buy and sell orders

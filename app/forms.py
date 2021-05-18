@@ -19,3 +19,16 @@ class AddTradeForm(FlaskForm):
         allow_blank=False
     )
     submit = SubmitField('Submit')
+
+class AddMarketOrderForm(FlaskForm):
+    shares = IntegerField('Shares', validators=[DataRequired()])
+    company = QuerySelectField(
+        'Company',
+        query_factory=lambda: models.Company.query,
+        allow_blank=False
+    )
+    submit = SubmitField('Place Market Order')
+
+class MarketOrderFillForm(FlaskForm):
+    shares = IntegerField('Shares', validators=[DataRequired()])
+    submit = SubmitField('Fulfill Order')
