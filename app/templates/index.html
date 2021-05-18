@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <h1>JustRP Stock Market</h1>
+    {% for company in companies %}
+    <p>
+        {{ company.name }}<br>
+    </p>
+    {% endfor %}
+{% endblock %}

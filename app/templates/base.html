@@ -1,0 +1,32 @@
+{% extends 'bootstrap/base.html' %}
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/d3Style.css">
+{% block title %}
+    JustRP Stock Market
+{% endblock %}
+
+{% block navbar %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        <hr>
+        {% block app_content %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+    <script src="static/js/graph.js"></script> 
+{% endblock %}
